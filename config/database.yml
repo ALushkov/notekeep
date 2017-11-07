@@ -18,8 +18,9 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: note1
-  password: 789
+  username: note2
+  password: pass
+  host: localhost
 
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -27,7 +28,7 @@ default: &default
 
 development:
   <<: *default
-  database: tnote
+  database: tnote_d
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,7 +62,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: dnote
+  database: dnote_d
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
