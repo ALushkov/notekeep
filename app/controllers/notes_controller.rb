@@ -24,10 +24,21 @@ class NotesController < ApplicationController
     end
   end
   
+  def edit
+
+  end
+    
   def update
+    if @note.update(params_note)
+      redirect_to @note
+    else
+      render 'edit'  
+    end  
   end
   
   def destroy
+    @note.destroy
+    redirect_to notes_path
   end
 
   private 
