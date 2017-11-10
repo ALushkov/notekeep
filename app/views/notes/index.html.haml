@@ -1,6 +1,10 @@
-%h1 All Notes
-- @notes.each do |note|
-	%h2= link_to note.title, note
-	%p= time_ago_in_words(note.created_at)
+.container
+  .row
+    .col-md-12
+      %h1.glyphicon.glyphicon-list-alt All Your Notes
+  .row
+  - @notes.each do |note|
+    .col-md-2
+      %h2.glyphicon.glyphicon-tag= link_to note.title, note
+      %p= time_ago_in_words(note.created_at)
 
-= link_to 'Add New Note', new_note_path
