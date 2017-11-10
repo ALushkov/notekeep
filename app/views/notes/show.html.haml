@@ -1,12 +1,12 @@
 .container
   .row
     
-    .col-md-12= @note.title
+    .col-md-12
+      %h1= @note.title
     
   .row
     
     .col-md-12
-      %h1= @note.title
       %p= @note.content
       =link_to "All notes", root_path
       =link_to "Edit", edit_note_path(@note)
