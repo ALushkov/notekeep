@@ -39,6 +39,7 @@ gem 'normalize-scss', '~> 5.0', '>= 5.0.3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails'
 
+gem 'meta-tags'
 
 
 # Use Capistrano for deployment

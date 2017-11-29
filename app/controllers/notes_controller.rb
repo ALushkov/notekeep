@@ -5,10 +5,12 @@ class NotesController < ApplicationController
 
   def index
     @notes = Note.where(user_id: current_user).order(priority: :desc)
+    @page_description = 'Page with all Notes'
   end
   
   def show
-
+    @page_title = @note.htmltitle
+    @page_description = @note.htmldescription
 	end
   
   def new
