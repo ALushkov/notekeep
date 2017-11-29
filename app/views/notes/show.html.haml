@@ -1,13 +1,22 @@
-.container
-  .row
-    
-    .col-md-12
-      %h1= @note.title
-    
-  .row
-    
-    .col-md-12
-      %p= @note.content
-      =link_to "All notes", root_path
-      =link_to "Edit", edit_note_path(@note)
-      =link_to "Delete", note_path(@note), method: :delete
+- if (current_user.id == @note.user_id)
+  .container
+    .row
+      .col-md-12
+        %h1= @note.title
+    .row
+      .col-md-12
+        %p Content: #{@note.content}
+        %p Priority: #{@note.priority}
+        %p Published_at #{@note.created_at}
+        =link_to "All notes", root_path
+        =link_to "Edit", edit_note_path(@note)
+        =link_to "Delete", note_path(@note), method: :delete
+- else 
+  .container
+    .row
+      .col-md-12
+        %h1 'Not your Note'
+    .row
+      .col-md-12
+        
+        =link_to "All notes", root_path

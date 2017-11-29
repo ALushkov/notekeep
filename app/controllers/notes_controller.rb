@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   
   before_action :find_note, only: [:show, :edit, :update, :destroy]
+  
 
   def index
     @notes = Note.where(user_id: current_user)
@@ -48,7 +49,7 @@ class NotesController < ApplicationController
   end
 
   def params_note
-    params.require(:note).permit(:title, :content)
+    params.require(:note).permit(:title, :content, :htmltitle, :htmldescription, :priority)
   end
 
 

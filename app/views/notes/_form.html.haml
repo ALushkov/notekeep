@@ -1,4 +1,8 @@
 = simple_form_for @note do |f|
-  =f.input :title 
-  =f.input :content
+  =f.input :title,required: true, placeholder: 'Note Name'
+  =f.input :content,required: true, placeholder: 'Your Note', as: :text
+  =f.input :htmltitle,required: true, placeholder: 'Note HTML Title'
+  =f.input :htmldescription,required: true, placeholder: 'Note HTML Description'
+  =f.input :priority, collection: 1..10, promt: 'Select priority', selected: 1
+  =f.hidden_field :user_id, :value => current_user.id
   =f.button :submit
