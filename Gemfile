@@ -40,6 +40,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails'
 
 gem 'meta-tags'
+gem 'bootstrap-wysihtml5-rails'
 
 
 # Use Capistrano for deployment

@@ -5,7 +5,7 @@
         %h1= @note.title
     .row
       .col-md-12
-        %p Content: #{@note.content}
+        %p Content: #{@note.content.html_safe}
         %p Priority: #{@note.priority}
         %p Published_at #{@note.created_at}
         =link_to "All notes", root_path
