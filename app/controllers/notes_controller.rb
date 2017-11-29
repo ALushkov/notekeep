@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   
 
   def index
-    @notes = Note.where(user_id: current_user)
+    @notes = Note.where(user_id: current_user).order(priority: :desc)
   end
   
   def show
